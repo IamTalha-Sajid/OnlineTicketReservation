@@ -1,0 +1,126 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+.hero{
+    min-height:  100vh;
+    width: 100%;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(bus1.jpg);
+    background-size: cover;
+    background-position: relative;
+}
+.form-box{
+    /* display: flex; */
+    box-sizing: border-box;
+	width: 350px;
+	height: 450px;
+	position: relative;
+	margin: auto;
+    margin-right: 300px;
+    margin-top: 7%;
+	background: rgba(0, 0, 0, 0.3);
+	box-shadow: 0 0 20px 9px rgba(0, 0, 0, 0.61);
+	padding: 5px;
+	overflow: hidden;
+}
+.button-box{
+	width: 220px;
+	margin: 35px;
+	position: relative;
+	box-shadow: 0 0 20px 9px #2aadff63;
+	border-radius: 30px;
+}
+.toggle-btn{
+	color: white;
+	padding: 10px 30px;
+	cursor: pointer;
+	background: transparent;
+	border: 0;
+	outline: none;
+	position: relative;
+}
+#btn{
+	top: 0;
+	left: 0;
+	position: absolute;
+	width: 110px;
+	height: 100%;
+	background: #1990d8;
+	border-radius: 30px;
+	transition: .5s;
+}
+.input-group{
+	top: 180px;
+	position: absolute;
+	width: 80%;
+	transition: .5s;
+}
+.inout-field{
+	width: 100%;
+	padding: 10px 0;
+	margin: 5px 35px;
+	border-left: 0;
+	border-right: 0;
+	border-top: 0;
+	border-bottom: 1px solid #fff;
+	outline: none;
+	background-color: transparent;
+	color: white;
+}
+.submit-btn{
+	color: white;
+	width: 85%;
+	padding: 10px 30px;
+	cursor: pointer;
+	display: block;
+	margin: 0 56px;
+	background: #1990d8;
+	border: 1;
+	border-color: white;
+	border-radius: 30px;
+}
+.check-box{
+	margin: 30px 10px 30px 35px;
+}
+span{
+	color: rgb(231, 229, 229);
+	font-size: 12px;
+	bottom: 104px;
+	position: absolute;
+}
+span1{
+	color: rgb(231, 229, 229);
+	font-size: 12px;
+	bottom: 67px;
+	position: absolute;
+}
+h1{
+	color: rgb(231, 229, 229);
+	font-size: 12px;
+	margin: 0 0 20px 35px;
+	cursor: pointer;
+}
+::placeholder{
+	color: white;
+}
+#login{
+	left: 5px;
+}
+#register{
+	left: 450px;
+}
+
+@media(max-width: 768px){
+    .form-box {
+        margin: auto;
+        margin-top: 10%;
+    }
+}
+
+@media(max-width: 480px){
+    .form-box {
+        width: 300px;
+        height: 450px;
+    }
+}

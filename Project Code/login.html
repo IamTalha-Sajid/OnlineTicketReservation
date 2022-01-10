@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login and Registration Form</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="HandheldFriendly" content="true">
+	<link rel="stylesheet" href="StyleLogin.css">
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+
+<!-------- Body ----------->
+
+<body class="hero">
+	<div>
+		<div class="form-box">
+			<center>
+				<div class="button-box">
+					<div id="btn"></div>
+					<button type="button" class="toggle-btn" onclick="login()">Log In</button>
+					<button type="button" class="toggle-btn" onclick="register()">Register</button>
+				</div>
+			</center>
+			<form id="login" class="input-group">
+				<input type="text" class="inout-field" name="UserNamel" placeholder="Username" autocomplete="off" required>
+				<input type="password" class="inout-field" name="Pinl" placeholder="Password" required>
+				<input type="checkbox" class="check-box" onclick="ShowPassword(this)"><span>Show Password</span>
+				<h1 style="color: transparent; font-size: 12px;" onclick="forgetpass()">Forgot Password?</h1>
+				<input type="button" name="submit" value="login" onclick="CheckLogin()" class="submit-btn">
+			</form>
+			<form id="register" class="input-group">
+				<input type="text" class="inout-field" name="UserName" placeholder="Username" autocomplete="off" required>
+				<input type="password" class="inout-field" name="Pin" placeholder="Password" required>
+				<input type="email" class="inout-field" name="Email" placeholder="Email" autocomplete="off" required>
+				<input type="checkbox" class="check-box" id="tac"><span1>I Agree to the Terms and Conditions</span1>
+				<input type="button" name="submit" value="Sign Up" onclick="Insert()" class="submit-btn">
+			</form>
+		</div>
+	</div>
+	
+	<script>
+		function ShowPassword(cb){
+			if(cb.checked == true){
+				document.getElementsByName("Pinl")[0].type="text";
+			}
+			else{
+				document.getElementsByName("Pinl")[0].type="password";
+			}
+
+		}
+		function Insert(){
+			if(tac.checked != true){
+				alert("You Must Agree The Terms and Conditions");
+				return;
+			}
+            UserName = document.getElementsByName("UserName")[0].value;
+            Pin = document.getElementsByName("Pin")[0].value;
+            Email = document.getElementsByName("Email")[0].value;
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function(){
+				if( this.readyState == 4 && this.status == 200){
+					if(this.responseText == "Please fill all Fields")
+					{
+						alert(this.responseText);
+						return;
+					}
+					alert(this.responseText);
+					window.location.reload(true);
+				}
+			}
+	        xmlhttp.open("GET","SignUp.php?UserName="+UserName+"&Pin="+Pin+"&Email="+Email,true);
+	        xmlhttp.send();
+		}
+		function CheckLogin(){
+			
+            UserName = document.getElementsByName("UserNamel")[0].value;
+            Pin = document.getElementsByName("Pinl")[0].value;
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function(){
+				if( this.readyState == 4 && this.status == 200){
+					if(this.responseText == "true")
+						{
+							alert('Welcome');
+							location.href = "Home.php";
+						}
+					else
+						alert(this.responseText);
+				}
+			}
+	        xmlhttp.open("GET","Login.php?UserName="+UserName+"&Pin="+Pin,true);
+			
+	        xmlhttp.send();
+		}
+
+		var x = document.getElementById("login");
+		var y = document.getElementById("register");
+		var z = document.getElementById("btn");
+
+		function register(){
+			x.style.left = "-450px";
+			y.style.left = "0px";
+			z.style.left = "110px";
+		}
+
+		function login(){
+			x.style.left = "5px";
+			y.style.left = "450px";
+			z.style.left = "0px";
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,569 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+body{
+    overflow-x: hidden;
+}
+.container{
+    position: relative;
+    width: 100%;
+}
+.navigation.active{
+    width: 60px;
+}
+.navigation{
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: #1990d8;
+    transition: 00.5s;
+    overflow: hidden;
+}
+.navigation ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.navigation ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+    cursor: pointer;
+}
+.navigation ul li:hover{
+    background: #87cbf5;
+}
+.navigation ul li:nth-child(1){
+    margin-bottom: 20px;
+}
+.navigation ul li:nth-child(1):hover{
+    background: transparent;
+}
+.navigation ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: white;
+
+}
+.navigation ul li a .Icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+.navigation ul li a .Icon .fas,.navigation ul li a .Icon .far{
+    color: white;
+    font-size: 24px;
+}
+.navigation ul li a .Title{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    white-space: nowrap;
+}
+.main{
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: #f5f5f5;
+    transition: 0.5s;
+}
+.main.active{
+    width: calc(100% - 60px);
+    left: 60px;
+}
+.main .topbar{
+    width: 100%;
+    background: white;
+    height: 60px;
+    display: flex;
+    padding: 0 0;
+    justify-content: space-between;
+    align-items: center;
+}
+.toggle{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    background: transparent;
+}
+.toggle .fas{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    line-height: 60px;
+    font-size: 24px;
+    color: black;
+    text-align: center;
+}
+.search{
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+}
+.search label{
+    position: relative;
+    width: 100%;
+}
+.search label input{
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+    padding: 5px 35px;
+    outline: none;
+    border: 2px solid #1990d8;
+}
+.search label .fas,.search label .fad{
+    position: absolute;
+    left: 15px;
+    top: 4px;
+    font-size: 19px;
+    color: #1990d8;
+}
+.user{
+   position: relative;
+   min-width: 50px;
+   width: 50px;
+   height: 50px;
+   border-radius: 50%;
+   overflow: hidden;
+   cursor: pointer;
+}
+.user img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.cardbox{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 20px;
+}
+.cardbox .card{
+    position: relative;
+    background: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.cardbox .card .numbers{
+    position: relative;
+    font-size: 2em;
+    font-weight: 500;
+}
+.cardbox .card .cardname{
+    color: #1990d8;
+}
+.cardbox .card .iconBox{
+    font-size: 2.5em;
+    color: #1990d8;
+}
+.details{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    padding-top: 0;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 2fr 1fr;
+}
+.details .recentOrders{
+    position: relative;
+    min-height: 530px;
+    background: #fff;
+    padding: 10px;
+}
+.cardHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.cardHeader h2{
+    font-weight: 600;
+}
+.btn{
+    position: relative;
+    padding: 5px 10px;
+    background: #1990d8;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+}
+.details table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+.details table thead td{
+    font-weight: 700;
+}
+.details .recentOrders table tbody tr:last-child{
+    border-bottom: none;
+}
+.details .recentOrders table tr{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.details .recentOrders table tr:hover{
+    background: #1990d8;
+    color: #fff;
+}
+.details .recentOrders table tr td{
+    padding: 9px 5px;
+}
+.details .recentCustomer{
+    position: relative;
+    min-height: 530px;
+    background: #fff;
+    padding: 20px;
+}
+.details .recentCustomer .imgBx{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.details .recentCustomer .imgBx img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+}
+.details .recentCustomer table tr td{
+    position: relative;
+    padding: 7px 10px;
+}
+.details .recentCustomer table tr td h4{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2em;
+}
+.details .recentCustomer table tr td span{
+    font-size: 14px;
+    color: #999;
+}
+.details .recentCustomer table tr:hover{
+    background: #1990d8;
+    color: #fff;
+}
+.details .recentCustomer table tr:hover td span{
+    color: #fff;
+}
+
+/* Schedule View */
+.detailsSchedule{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    padding-top: 20px;
+}
+.detailsSchedule .recentSchedule{
+    position: relative;
+    min-height: 530px;
+    background: #fff;
+    padding: 10px;
+}
+.detailsSchedule table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+.detailsSchedule table thead td{
+    font-weight: 700;
+}
+.detailsSchedule .recentSchedule table tbody tr:last-child{
+    border-bottom: none;
+}
+.detailsSchedule .recentSchedule table tr{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.detailsSchedule .recentSchedule table tr td{
+    padding: 9px 25px;
+    text-align: center;
+}
+.detailsSchedule .recentSchedule table tr td .fas{
+    color: rgb(230, 38, 38);
+    font-size: 20px;
+}
+
+/* Bus View */
+.detailsBus{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    padding-top: 20px;
+}
+.detailsBus .recentBus{
+    position: relative;
+    min-height: 530px;
+    background: #fff;
+    padding: 10px;
+}
+.detailsBus table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+.detailsBus table thead td{
+    font-weight: 700;
+}
+.detailsBus .recentBus table tbody tr:last-child{
+    border-bottom: none;
+}
+.detailsBus .recentBus table tr{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.detailsBus .recentBus table tr td{
+    padding: 25px 9px;
+    text-align: center;
+}
+.detailsBus .recentBus table tr td .fas{
+    color: rgb(230, 38, 38);
+    font-size: 20px;
+}
+
+
+/* Bus Add */
+.row{
+    margin: 5%;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(3,2fr);
+    grid-gap: 30px;
+}
+.bt{
+    text-align: center;
+    font-size: 25px;
+    color: #1990d8;
+    font-weight: 600;
+    padding: 10px;
+}
+.booking{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+h1{
+    font-size: 36px;
+    font-weight: 800;
+}
+p1{
+    color: black;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+.Dropdown, .dept, .fr, .dt{
+    width: 250px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: #1990d8;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: center;
+}
+.Dropdown option{
+    position: center;
+    margin-right: 30px;
+    text-align: center;
+}
+.hero-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+.hero-btn:hover{
+    border: 1px solid #1990d8;
+    background: #1990d8;
+    transition: 1s;
+}
+.blue-btn{
+    border: 1px solid #1990d8;
+    background: transparent;
+    color: #1990d8;
+}
+.blue-btn:hover{
+    color: white;
+}
+/* Report */
+.groupbox fieldset{
+    background-color: #fff;
+}
+.groupbox{
+   padding: 20px;
+}
+.groupbox legend{
+    padding: 5px 10px;
+    font-size: 20px;
+    background-color: #1990d8;
+    margin-left: 20px;
+    color: #fff;
+}
+.rows{
+    padding: 20px;
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+.rows .row2{
+    align-content: right;
+}
+.rows .sbd,.rows .sbr{
+    font-size: 18px;
+    color: #1990d8;
+}
+.cb{
+    padding-bottom: 30px;
+}
+.detailsReservation{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    padding-top: 20px;
+}
+.detailsReservation .recentReservation{
+    position: relative;
+    min-height: 530px;
+    background: #fff;
+    padding: 10px;
+}
+.detailsReservation table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+.detailsReservation table thead td{
+    font-weight: 700;
+}
+.detailsReservation .recentReservation table tbody tr:last-child{
+    border-bottom: none;
+}
+.detailsReservation .recentReservation table tr{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.detailsReservation .recentReservation table tr td{
+    padding: 25px 9px;
+    text-align: center;
+}
+.detailsReservation .recentReservation table tr td .fas{
+    color: rgb(230, 38, 38);
+    font-size: 20px;
+}
+
+/* Responsive */
+@media (max-width: 992px){
+    .navigation{
+        left: -300px;
+    }
+    .navigation.active{
+        left: 0;
+        width: 300px;
+    }
+    .main{
+        width: 100%;
+        left: 0;
+    }
+    .main.active{
+        width: calc(100% - 300px);
+        left: 300px;
+    }
+    .cardbox{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media (max-width: 768px){
+    .details{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .row{
+        grid-template-columns: repeat(2,3fr);
+    }
+    .cardHeader{
+        font-weight: 600;
+        font-size: 18px;
+    }
+    .rows{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+
+@media (max-width: 480px){
+    .cardbox{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .details .recentOrders{
+        overflow-x: auto;
+    }
+    .details .recentOrders table{
+       width: 600px;
+    }
+    .detailsBus .recentBus{
+        overflow-x: auto;
+    }
+    .detailsBus .recentBus table{
+       width: 600px;
+    }
+    .row{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .navigation{
+        width: 100%;
+        left: -100%;
+        z-index: 10000;
+    }
+    .navigation.active{
+        width: 100%;
+        left: 0;
+    }
+    .toggle.active{
+        position: fixed;
+        z-index: 10000;
+        right: 0;
+        left: initial;
+    }
+    .toggle.active .fas::before{
+        color: white;
+    }
+    .detailsSchedule .recentSchedule{
+        overflow-x: auto;
+    }
+    .detailsSchedule .recentSchedule table{
+       width: 600px;
+    }
+}
